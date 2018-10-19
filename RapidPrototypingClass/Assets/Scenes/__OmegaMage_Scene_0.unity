@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,6 +113,83 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &4002705
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400016, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+      propertyPath: m_Intensity
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06d786368719c4ecd931c5fc5fd9bd73, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &72360890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100016, guid: 06d786368719c4ecd931c5fc5fd9bd73,
+    type: 2}
+  m_PrefabInternal: {fileID: 4002705}
+--- !u!114 &72360891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 72360890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76ed246470b0554b988b897413593a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTapTime: 0.1
+  mDragDist: 5
+  tapIndicatorPrefab: {fileID: 100000, guid: 65bee36374982469f8b4797b1b515e38, type: 2}
+  activeScreenWidth: 1
+  speed: 2
+  ____________: 0
+  mPhase: 0
+  mouseInfos: []
+  walking: 0
+  walkTarget: {x: 0, y: 0, z: 0}
+  characterTrans: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &170076734
 Light:
   m_ObjectHideFlags: 0
@@ -179,6 +256,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &290699770 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 06d786368719c4ecd931c5fc5fd9bd73,
+    type: 2}
+  m_PrefabInternal: {fileID: 4002705}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,8 +271,10 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
+  - component: {fileID: 534669907}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: _MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,9 +334,46 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da105b401cb2db149b35fbdf02d91131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomsText: {fileID: 4900000, guid: bdef848fe5fe34d08b3a284654524ea0, type: 3}
+  roomNumber: 0
+  tilePrefab: {fileID: 100000, guid: 84bf7187657d043eda6a4404d8d5abf6, type: 2}
+  tileTextures:
+  - str: dirt
+    tex: {fileID: 2800000, guid: f769ef7f94b744c1cb8a76a1b7244bab, type: 3}
+  - str: stone
+    tex: {fileID: 2800000, guid: 51913b142672e46bfb3c90299e5f38f4, type: 3}
+  __________________: 0
+  roomsXMLR:
+    xmlText: 
+  tileAnchor: {fileID: 0}
+--- !u!114 &534669907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48aadc5d6c481304f9e5b351178099dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 290699770}
+  camEasing: 0.1
+  followOffset: {x: 0, y: 0, z: -2}

@@ -20,7 +20,7 @@ public class Tile : PT_MonoBehaviour
         }
     }
 
-    /*
+
     public string tex
     {
         get { return (_tex); }
@@ -35,11 +35,11 @@ public class Tile : PT_MonoBehaviour
             }
             else
             {
-                renderer.material.mainTexture = t2D;
+                GetComponent<Renderer>().material.mainTexture = t2D;
             }
         }
     } 
-    */
+
 
     new public Vector3 pos
     {
